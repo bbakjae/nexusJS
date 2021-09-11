@@ -10,7 +10,6 @@ export const Post = objectType({
     t.boolean('published') // <- Field named `published` of type `Boolean`
   },
 })
-
 export const PostQuery = extendType({
   type: 'Query',
   definition(t) {
