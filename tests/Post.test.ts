@@ -18,7 +18,7 @@ it('ensures that a draft can be created and published', async () => {
 Object {
   "createDraft": Object {
     "body": "...",
-    "id": 1,
+    "id": 7,
     "published": false,
     "title": "Nexus",
   },
@@ -42,7 +42,7 @@ Object {
 Object {
   "publish": Object {
     "body": "...",
-    "id": 1,
+    "id": 7,
     "published": true,
     "title": "Nexus",
   },
@@ -55,6 +55,42 @@ Array [
   Object {
     "body": "...",
     "id": 1,
+    "published": true,
+    "title": "Nexus",
+  },
+  Object {
+    "body": "i don't know",
+    "id": 2,
+    "published": true,
+    "title": "node JS",
+  },
+  Object {
+    "body": "i don't know",
+    "id": 3,
+    "published": false,
+    "title": "node JS",
+  },
+  Object {
+    "body": "i don't know",
+    "id": 4,
+    "published": false,
+    "title": "node JS",
+  },
+  Object {
+    "body": "...",
+    "id": 5,
+    "published": true,
+    "title": "Nexus",
+  },
+  Object {
+    "body": "...",
+    "id": 6,
+    "published": true,
+    "title": "Nexus",
+  },
+  Object {
+    "body": "...",
+    "id": 7,
     "published": true,
     "title": "Nexus",
   },

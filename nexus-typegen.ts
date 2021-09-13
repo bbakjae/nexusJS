@@ -51,7 +51,9 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
     createDraft: NexusGenRootTypes['Post'] | null; // Post
+    deleteDraft: NexusGenRootTypes['Post'] | null; // Post
     publish: NexusGenRootTypes['Post'] | null; // Post
+    updateTitle: NexusGenRootTypes['Post'] | null; // Post
   }
   Post: { // field return type
     body: string | null; // String
@@ -68,7 +70,9 @@ export interface NexusGenFieldTypes {
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
     createDraft: 'Post'
+    deleteDraft: 'Post'
     publish: 'Post'
+    updateTitle: 'Post'
   }
   Post: { // field return type name
     body: 'String'
@@ -88,8 +92,15 @@ export interface NexusGenArgTypes {
       body: string; // String!
       title: string; // String!
     }
+    deleteDraft: { // args
+      draftId: number; // Int!
+    }
     publish: { // args
       draftId: number; // Int!
+    }
+    updateTitle: { // args
+      id: number; // Int!
+      title: string; // String!
     }
   }
 }

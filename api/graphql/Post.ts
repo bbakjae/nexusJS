@@ -30,6 +30,36 @@ export const PostQuery = extendType({
 export const PostMutation = extendType({
   type: 'Mutation',
   definition(t) {
+    t.field('updateTitle',{
+      type: 'Post',
+      args:{
+        id: nonNull(intArg()),
+        title: nonNull(stringArg()),
+      },
+      resolve(_root, _args, ctx) {
+        return ctx.db.post.update({
+           where: { 
+             id: _args.id 
+           },
+           data:{
+             title: _args.title 
+           }
+        })
+      }
+    })
+    t.field('deleteDraft',{
+      type: 'Post',
+      args:{
+        draftId: nonNull(intArg())
+      },
+      resolve(_root, _args, ctx) {
+        return ctx.db.post.delete({
+          where:{
+            id: _args.draftId,
+          }
+        })
+      }
+    })
     t.field('createDraft', {
       type: 'Post',
       args: {

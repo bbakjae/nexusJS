@@ -4,7 +4,9 @@
 
 type Mutation {
   createDraft(body: String!, title: String!): Post
+  deleteDraft(draftId: Int!): Post
   publish(draftId: Int!): Post
+  updateTitle(id: Int!, title: String!): Post
 }
 
 type Post {
