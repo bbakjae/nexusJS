@@ -17,6 +17,7 @@ export interface NexusGenInputs {
 }
 
 export interface NexusGenEnums {
+  StatusEnum: 1 | 2
 }
 
 export interface NexusGenScalars {
@@ -36,6 +37,15 @@ export interface NexusGenObjects {
     title?: string | null; // String
   }
   Query: {};
+  User: { // root type
+    fullname?: string | null; // String
+    id?: number | null; // Int
+    status?: NexusGenEnums['StatusEnum'] | null; // StatusEnum
+  }
+  userPost: { // root type
+    id?: number | null; // Int
+    title?: string | null; // String
+  }
 }
 
 export interface NexusGenInterfaces {
@@ -46,7 +56,7 @@ export interface NexusGenUnions {
 
 export type NexusGenRootTypes = NexusGenObjects
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
@@ -64,6 +74,15 @@ export interface NexusGenFieldTypes {
   Query: { // field return type
     drafts: Array<NexusGenRootTypes['Post'] | null> | null; // [Post]
     posts: Array<NexusGenRootTypes['Post'] | null> | null; // [Post]
+  }
+  User: { // field return type
+    fullname: string | null; // String
+    id: number | null; // Int
+    status: NexusGenEnums['StatusEnum'] | null; // StatusEnum
+  }
+  userPost: { // field return type
+    id: number | null; // Int
+    title: string | null; // String
   }
 }
 
@@ -83,6 +102,15 @@ export interface NexusGenFieldTypeNames {
   Query: { // field return type name
     drafts: 'Post'
     posts: 'Post'
+  }
+  User: { // field return type name
+    fullname: 'String'
+    id: 'Int'
+    status: 'StatusEnum'
+  }
+  userPost: { // field return type name
+    id: 'Int'
+    title: 'String'
   }
 }
 
@@ -115,7 +143,7 @@ export type NexusGenObjectNames = keyof NexusGenObjects;
 
 export type NexusGenInputNames = never;
 
-export type NexusGenEnumNames = never;
+export type NexusGenEnumNames = keyof NexusGenEnums;
 
 export type NexusGenInterfaceNames = never;
 

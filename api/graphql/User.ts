@@ -1,6 +1,6 @@
 import { enumType, objectType } from "nexus";
 
-const User = objectType({
+export const User = objectType({
     name: 'User',
     definition(t){
         t.int('id', {description:'Id of the user'})
@@ -9,15 +9,15 @@ const User = objectType({
     }
 })
 
-const Post = objectType({
-    name: 'Post',
+export const userPost = objectType({
+    name: 'userPost',
     definition(t){
         t.int('id')
         t.string('title')
     }
 })
 
-const StatusEnum = enumType({
+export const StatusEnum = enumType({
     name: 'StatusEnum',
     members:{
         ACTIVE: 1,

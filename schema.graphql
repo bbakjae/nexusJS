@@ -20,3 +20,22 @@ type Query {
   drafts: [Post]
   posts: [Post]
 }
+
+enum StatusEnum {
+  ACTIVE
+  DISABLED
+}
+
+type User {
+  """Full name of the user"""
+  fullname: String
+
+  """Id of the user"""
+  id: Int
+  status: StatusEnum
+}
+
+type userPost {
+  id: Int
+  title: String
+}
